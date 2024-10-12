@@ -9,10 +9,8 @@ public class Calculator {
         System.out.println("Enter first number:");
         int firstNumber = Integer.parseInt(myObj.nextLine());
 
-        System.out.println("Enter first number:");
+        System.out.println("Enter second number:");
         int secondNumber = Integer.parseInt(myObj.nextLine());
-
-
 
         switch (operator){
             case "1":
@@ -20,15 +18,12 @@ public class Calculator {
                 break;
             case "2":
                 System.out.println("Output is:" + (firstNumber - secondNumber));
-
                 break;
             case "3":
                 System.out.println("Output is:" + (firstNumber * secondNumber));
-
                 break;
             case "4":
                 System.out.println("Output is:" + (firstNumber / secondNumber));
-
                 break;
         }
     }
