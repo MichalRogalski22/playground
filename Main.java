@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,10 +8,10 @@ public class Main {
         float secondNumber = 20.0002f;
 
         System.out.println(number + secondNumber);
-
-        System.out.println("Select operation: \n1- Calculator\n2- Pies\n3- Multiplication\n3- Choinka");
+        System.out.println("Select operation: \n1- Calculator\n2- Pies\n3- Multiplication\n3- Choinka\n4- Car");
         Scanner myObj = new Scanner(System.in);
         String operator = myObj.nextLine();
+
 
         switch (operator) {
             case "1":
@@ -29,6 +28,10 @@ public class Main {
                 // Choinka
                 Choinka choinka = new Choinka();
                 choinka.draw();
+            case "4":
+                // Car
+                Car car = new Car("Red", "Toyota");
+                car.startCar();
         }
     }
 }
