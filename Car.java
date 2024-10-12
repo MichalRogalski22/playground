@@ -1,6 +1,8 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Car {
+    boolean isOn = true;
     private int speed = 0;
     private final String color;
     private final String brand;
@@ -12,6 +14,7 @@ public class Car {
 
     public void accelerate(){
         speed += 10;
+        randomEvent();
         System.out.println("Bzium");
         System.out.println("Current speed is: " + speed);
     }
@@ -19,6 +22,7 @@ public class Car {
     public void slowDown(){
         if(speed > 0){
             speed -= 10;
+            randomEvent();
             System.out.println("Current speed is: " + speed);
         } else {
             System.out.println("Car has stopped");
@@ -29,8 +33,30 @@ public class Car {
         System.out.println("Car color: "+ color + "\nCar Brand: " + brand + "\nCar speed: " + speed);
     }
 
+    public void randomEvent() {
+        double random = Math.random() * 9 + 1;
+        if (random > 7){
+            switch ((int) random) {
+                case 8:
+                    System.out.println("You were distracted by your phone and hit tree.");
+                    this.isOn = false;
+                    break;
+
+                case 9:
+                    System.out.println("Breaks malfunction, your car stops.");
+                    this.speed = 0;
+                    break;
+
+                case 10:
+                    System.out.println("Accelerator malfunction, your car speeds up.");
+                    this.speed += 50;
+                    break;
+            }
+        }
+    }
+
     public void startCar(){
-        boolean isOn = true;
+
         while (true) {
             if (!isOn){
                 return;
